@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faury NFT</title>
+    <title>Meu NFT</title>
   </head>
   <body>
     <header>
-      <h1>Meu NFT</h1>
+      <h1>Faury NFT</h1>
     </header>
     <section>
         <div id="divImg" style="display: none">
@@ -64,7 +64,10 @@
           alert("O Metamask irá pedir aprovação para acessar essa página.\nPor favor, aceite.");
           signer = await provider.getSigner();
           network = await provider.getNetwork();
-          contract = new ethers.Contract(contractAddressOnNetwork, abi, provider);
+          //Caso seja somente para leitura usar o provider para performance em caso de transação usar o signer
+          //contract = new ethers.Contract(contractAddressOnNetwork, abi, provider);
+          contract = new ethers.Contract(contractAddressOnNetwork, abi, signer);
+
           console.log("selected provider: ", provider);
           console.log("network:", network);
           console.log("signer: ", signer);
