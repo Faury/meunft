@@ -72,7 +72,7 @@
           //Caso seja somente para leitura usar o provider para performance em caso de transação usar o signer
           //contract = new ethers.Contract(contractAddressOnNetwork, abi, provider);
           contract = new ethers.Contract(contractAddressOnNetwork, abi, signer);
-
+        }
           console.log("selected provider: ", provider);
           console.log("network:", network);
           console.log("signer: ", signer);
@@ -100,7 +100,6 @@
           imgNFT.src = metadados.image;
           const divImg = document.getElementById("divImg");
           divImg.style.display = "block";
-        }
       }
     </script>
     <script>
