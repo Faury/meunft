@@ -76,12 +76,12 @@
           console.log("selected provider: ", provider);
           console.log("network:", network);
           console.log("signer: ", signer);
+          const networkAccount = document.getElementById("networkAccount");
+          networkAccount.innerHTML = signer.address;
         }
           console.log("contract: ", contract);
           const contractAddress = document.getElementById("contractAddress");
           contractAddress.innerHTML = contractAddressOnNetwork;
-          const networkAccount = document.getElementById("networkAccount");
-          networkAccount.innerHTML = signer.address;
           const networkNetworkID = document.getElementById("networkNetworkID");
           networkNetworkID.innerHTML = network.chainId;
           // Create a contract
